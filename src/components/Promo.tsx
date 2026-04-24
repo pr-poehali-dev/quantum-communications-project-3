@@ -1,7 +1,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import Ball from "@/components/Ball";
-import Wave from "@/components/Wave";
+import WaveTop from "@/components/WaveTop";
 
 const reviews = [
   {
@@ -50,12 +50,14 @@ export default function Promo() {
 
   return (
     <>
-      {/* Параллакс секция — результаты */}
+      {/* Параллакс — тёмный, перекрывает белый прайс */}
       <div
         ref={container}
         className="relative flex items-center justify-center h-screen overflow-hidden"
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
+        <WaveTop fill="#000000" variant={3} />
+
         <div className="fixed top-[-10vh] left-0 h-[120vh] w-full">
           <motion.div style={{ y }} className="relative w-full h-full">
             <img
@@ -67,11 +69,10 @@ export default function Promo() {
           </motion.div>
         </div>
 
-        {/* Шарики на параллакс-секции */}
-        <Ball size={80}  variant="pink"  opacity={0.50} className="absolute top-10 left-6   pointer-events-none z-10" />
-        <Ball size={50}  variant="light" opacity={0.45} className="absolute top-20 left-28  pointer-events-none z-10" />
-        <Ball size={65}  variant="pink"  opacity={0.45} className="absolute top-8  right-10  pointer-events-none z-10" />
-        <Ball size={40}  variant="pale"  opacity={0.55} className="absolute top-24 right-32  pointer-events-none z-10" />
+        <Ball size={80}  variant="pink"  opacity={0.50} className="absolute top-10 left-6    pointer-events-none z-10" />
+        <Ball size={50}  variant="light" opacity={0.45} className="absolute top-20 left-28   pointer-events-none z-10" />
+        <Ball size={65}  variant="pink"  opacity={0.45} className="absolute top-8  right-10   pointer-events-none z-10" />
+        <Ball size={40}  variant="pale"  opacity={0.55} className="absolute top-24 right-32   pointer-events-none z-10" />
         <Ball size={72}  variant="light" opacity={0.40} className="absolute bottom-12 left-10 pointer-events-none z-10" />
         <Ball size={44}  variant="pink"  opacity={0.45} className="absolute bottom-8  right-14 pointer-events-none z-10" />
 
@@ -92,15 +93,14 @@ export default function Promo() {
         </div>
       </div>
 
-      {/* тёмный → neutral-50 */}
-      <Wave topColor="#111111" bottomColor="#f9fafb" variant={2} />
+      {/* Отзывы — neutral-50, перекрывает тёмный */}
+      <div className="relative bg-neutral-50 px-6 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <WaveTop fill="#f9fafb" variant={2} />
 
-      {/* Отзывы */}
-      <div className="relative bg-neutral-50 px-6 py-20 lg:py-28 overflow-hidden">
-        <Ball size={85}  variant="pale"  opacity={0.60} className="absolute -left-6  top-10 pointer-events-none" />
-        <Ball size={52}  variant="light" opacity={0.50} className="absolute left-18  top-4  pointer-events-none" />
+        <Ball size={85}  variant="pale"  opacity={0.60} className="absolute -left-6  top-10   pointer-events-none" />
+        <Ball size={52}  variant="light" opacity={0.50} className="absolute  left-18  top-4    pointer-events-none" />
         <Ball size={68}  variant="pale"  opacity={0.55} className="absolute -right-4 bottom-12 pointer-events-none" />
-        <Ball size={40}  variant="pink"  opacity={0.30} className="absolute right-20  bottom-6  pointer-events-none" />
+        <Ball size={40}  variant="pink"  opacity={0.30} className="absolute  right-20 bottom-6  pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Отзывы</p>
@@ -125,13 +125,12 @@ export default function Promo() {
         </div>
       </div>
 
-      {/* neutral-50 → белый */}
-      <Wave topColor="#f9fafb" bottomColor="#ffffff" variant={4} />
+      {/* FAQ — белый, перекрывает neutral-50 */}
+      <div className="relative bg-white px-6 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <WaveTop fill="#ffffff" variant={4} />
 
-      {/* FAQ */}
-      <div className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
         <Ball size={95}  variant="pale"  opacity={0.55} className="absolute -right-6 top-12  pointer-events-none" />
-        <Ball size={58}  variant="light" opacity={0.45} className="absolute right-24 top-6   pointer-events-none" />
+        <Ball size={58}  variant="light" opacity={0.45} className="absolute  right-24 top-6   pointer-events-none" />
         <Ball size={70}  variant="pale"  opacity={0.50} className="absolute -left-4  bottom-8 pointer-events-none" />
 
         <div className="max-w-3xl mx-auto relative z-10">

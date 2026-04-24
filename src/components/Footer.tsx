@@ -1,19 +1,21 @@
 import Ball from "@/components/Ball";
-import Wave from "@/components/Wave";
+import WaveTop from "@/components/WaveTop";
 
 export default function Footer() {
   return (
     <>
-      {/* Контакты */}
+      {/* Контакты — neutral-50, перекрывает белый FAQ */}
       <div
         id="contact"
-        className="relative bg-neutral-50 px-6 py-20 lg:py-28 overflow-hidden"
+        className="relative bg-neutral-50 px-6 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden"
       >
-        <Ball size={110} variant="pale"  opacity={0.60} className="absolute -left-8  top-6   pointer-events-none" />
-        <Ball size={65}  variant="light" opacity={0.50} className="absolute left-24  top-2   pointer-events-none" />
-        <Ball size={88}  variant="pale"  opacity={0.55} className="absolute -right-6 bottom-8 pointer-events-none" />
-        <Ball size={54}  variant="pink"  opacity={0.28} className="absolute right-22  bottom-4 pointer-events-none" />
-        <Ball size={46}  variant="light" opacity={0.40} className="absolute left-10  bottom-4 pointer-events-none" />
+        <WaveTop fill="#f9fafb" variant={1} />
+
+        <Ball size={110} variant="pale"  opacity={0.60} className="absolute -left-8  top-6    pointer-events-none" />
+        <Ball size={65}  variant="light" opacity={0.50} className="absolute  left-24  top-2    pointer-events-none" />
+        <Ball size={88}  variant="pale"  opacity={0.55} className="absolute -right-6 bottom-8  pointer-events-none" />
+        <Ball size={54}  variant="pink"  opacity={0.28} className="absolute  right-22 bottom-4  pointer-events-none" />
+        <Ball size={46}  variant="light" opacity={0.40} className="absolute  left-10  bottom-4  pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Контакты</p>
@@ -71,10 +73,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* neutral-50 → тёмный */}
-      <Wave topColor="#f9fafb" bottomColor="#171717" variant={2} />
-
-      {/* Sticky Footer */}
+      {/* Тёмный футер — перекрывает neutral-50 */}
       <div
         className="relative h-[400px] sm:h-[600px] lg:h-[800px] max-h-[800px]"
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
@@ -82,13 +81,14 @@ export default function Footer() {
         <div className="relative h-[calc(100vh+400px)] sm:h-[calc(100vh+600px)] lg:h-[calc(100vh+800px)] -top-[100vh]">
           <div className="h-[400px] sm:h-[600px] lg:h-[800px] sticky top-[calc(100vh-400px)] sm:top-[calc(100vh-600px)] lg:top-[calc(100vh-800px)]">
             <div className="bg-neutral-900 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 h-full w-full flex flex-col justify-between relative overflow-hidden">
-              {/* Шарики в тёмном футере — приглушённые */}
-              <Ball size={120} variant="pink"  opacity={0.10} className="absolute -right-8 top-4   pointer-events-none" />
-              <Ball size={70}  variant="light" opacity={0.08} className="absolute right-28  top-2   pointer-events-none" />
-              <Ball size={90}  variant="pink"  opacity={0.09} className="absolute -left-4  bottom-6 pointer-events-none" />
-              <Ball size={55}  variant="pale"  opacity={0.10} className="absolute left-24   bottom-2 pointer-events-none" />
+              <WaveTop fill="#171717" variant={3} />
 
-              <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20 relative z-10">
+              <Ball size={120} variant="pink"  opacity={0.10} className="absolute -right-8 top-4    pointer-events-none" />
+              <Ball size={70}  variant="light" opacity={0.08} className="absolute  right-28 top-2    pointer-events-none" />
+              <Ball size={90}  variant="pink"  opacity={0.09} className="absolute -left-4  bottom-6  pointer-events-none" />
+              <Ball size={55}  variant="pale"  opacity={0.10} className="absolute  left-24  bottom-2  pointer-events-none" />
+
+              <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20 relative z-10 mt-8">
                 <div className="flex flex-col gap-1 sm:gap-2">
                   <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm tracking-widest">Студия</h3>
                   <a href="#about" className="text-white hover:text-[#ff5e8e] transition-colors duration-300 text-sm sm:text-base">О нас</a>

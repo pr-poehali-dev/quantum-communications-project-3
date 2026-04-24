@@ -1,6 +1,6 @@
 import Icon from "@/components/ui/icon";
 import Ball from "@/components/Ball";
-import Wave from "@/components/Wave";
+import WaveTop from "@/components/WaveTop";
 
 const advantages = [
   {
@@ -35,14 +35,15 @@ const prices = [
 export default function Featured() {
   return (
     <>
-      {/* Преимущества */}
-      <div id="about" className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
-        {/* Шарики-декор справа и слева от заголовка */}
-        <Ball size={100} variant="pale"  opacity={0.6} className="absolute -left-8 top-12 pointer-events-none" />
-        <Ball size={60}  variant="light" opacity={0.5} className="absolute left-16 top-4  pointer-events-none" />
-        <Ball size={80}  variant="pale"  opacity={0.55} className="absolute -right-6 top-8 pointer-events-none" />
-        <Ball size={50}  variant="light" opacity={0.45} className="absolute right-20 top-20 pointer-events-none" />
-        <Ball size={44}  variant="pink"  opacity={0.25} className="absolute right-10 bottom-8 pointer-events-none" />
+      {/* Преимущества — белый, перекрывает тёмный Hero волной */}
+      <div id="about" className="relative bg-white px-6 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <WaveTop fill="#ffffff" variant={2} />
+
+        <Ball size={100} variant="pale"  opacity={0.6}  className="absolute -left-8  top-12 pointer-events-none" />
+        <Ball size={60}  variant="light" opacity={0.5}  className="absolute  left-16 top-4  pointer-events-none" />
+        <Ball size={80}  variant="pale"  opacity={0.55} className="absolute -right-6 top-8  pointer-events-none" />
+        <Ball size={50}  variant="light" opacity={0.45} className="absolute  right-20 top-20 pointer-events-none" />
+        <Ball size={44}  variant="pink"  opacity={0.25} className="absolute  right-10 bottom-8 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Почему выбирают нас</p>
@@ -69,15 +70,13 @@ export default function Featured() {
         </div>
       </div>
 
-      {/* белый → neutral-50 */}
-      <Wave topColor="#ffffff" bottomColor="#f9fafb" variant={1} />
+      {/* Процедура + фото — neutral-50, перекрывает белый */}
+      <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 pt-28 pb-12 lg:pt-36 lg:pb-0 bg-neutral-50 overflow-visible">
+        <WaveTop fill="#f9fafb" variant={4} />
 
-      {/* Процедура + фото */}
-      <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-neutral-50 overflow-hidden">
-        {/* Шарики слева снизу */}
-        <Ball size={70}  variant="pink"  opacity={0.35} className="absolute left-4  bottom-16 pointer-events-none" />
-        <Ball size={45}  variant="light" opacity={0.40} className="absolute left-24 bottom-8  pointer-events-none" />
-        <Ball size={55}  variant="pale"  opacity={0.45} className="absolute left-8  bottom-36 pointer-events-none" />
+        <Ball size={70}  variant="pink"  opacity={0.35} className="absolute left-4   bottom-16 pointer-events-none" />
+        <Ball size={45}  variant="light" opacity={0.40} className="absolute left-24  bottom-8  pointer-events-none" />
+        <Ball size={55}  variant="pale"  opacity={0.45} className="absolute left-8   bottom-36 pointer-events-none" />
 
         <div className="flex-1 h-[400px] lg:h-[700px] mb-8 lg:mb-0 lg:order-2 rounded-3xl overflow-hidden">
           <img
@@ -104,23 +103,21 @@ export default function Featured() {
         </div>
       </div>
 
-      {/* neutral-50 → белый */}
-      <Wave topColor="#f9fafb" bottomColor="#ffffff" variant={3} />
+      {/* Прайс — белый, перекрывает neutral-50 */}
+      <div id="prices" className="relative bg-white px-6 pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+        <WaveTop fill="#ffffff" variant={1} />
 
-      {/* Прайс */}
-      <div id="prices" className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
-        {/* Шарики по углам */}
-        <Ball size={90}  variant="pale"  opacity={0.55} className="absolute -right-4 top-8  pointer-events-none" />
-        <Ball size={55}  variant="light" opacity={0.45} className="absolute right-20 top-4  pointer-events-none" />
+        <Ball size={90}  variant="pale"  opacity={0.55} className="absolute -right-4 top-8   pointer-events-none" />
+        <Ball size={55}  variant="light" opacity={0.45} className="absolute  right-20 top-4   pointer-events-none" />
         <Ball size={75}  variant="pale"  opacity={0.50} className="absolute -left-6  bottom-10 pointer-events-none" />
-        <Ball size={42}  variant="pink"  opacity={0.30} className="absolute left-20  bottom-6  pointer-events-none" />
+        <Ball size={42}  variant="pink"  opacity={0.30} className="absolute  left-20  bottom-6  pointer-events-none" />
 
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Цены</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 text-center mb-4">
             Популярные зоны
           </h2>
-          <div className="inline-flex items-center gap-2 mx-auto flex justify-center mb-12">
+          <div className="flex justify-center mb-12">
             <span className="bg-[#2ecc71] text-white text-sm font-bold px-4 py-2 rounded-full uppercase tracking-wide">
               Скидка 50% на первый визит
             </span>
