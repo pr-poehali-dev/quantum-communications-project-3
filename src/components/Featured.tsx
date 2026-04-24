@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import Ball from "@/components/Ball";
 
 const advantages = [
   {
@@ -34,8 +35,15 @@ export default function Featured() {
   return (
     <>
       {/* Преимущества */}
-      <div id="about" className="bg-white px-6 py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto">
+      <div id="about" className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
+        {/* Шарики-декор справа и слева от заголовка */}
+        <Ball size={100} variant="pale"  opacity={0.6} className="absolute -left-8 top-12 pointer-events-none" />
+        <Ball size={60}  variant="light" opacity={0.5} className="absolute left-16 top-4  pointer-events-none" />
+        <Ball size={80}  variant="pale"  opacity={0.55} className="absolute -right-6 top-8 pointer-events-none" />
+        <Ball size={50}  variant="light" opacity={0.45} className="absolute right-20 top-20 pointer-events-none" />
+        <Ball size={44}  variant="pink"  opacity={0.25} className="absolute right-10 bottom-8 pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Почему выбирают нас</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 text-center mb-4 leading-tight">
             Почему DENU — это другой уровень
@@ -45,7 +53,7 @@ export default function Featured() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {advantages.map((adv) => (
-              <div key={adv.title} className="flex flex-col items-start p-8 border border-neutral-100 hover:shadow-lg transition-shadow duration-300 rounded-3xl hover:border-pink-100">
+              <div key={adv.title} className="flex flex-col items-start p-8 border border-neutral-100 hover:shadow-lg transition-all duration-300 rounded-3xl hover:border-pink-100 bg-white">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
                   style={{ backgroundColor: adv.color + "20" }}
@@ -61,15 +69,20 @@ export default function Featured() {
       </div>
 
       {/* Процедура + фото */}
-      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-neutral-50">
-        <div className="flex-1 h-[400px] lg:h-[700px] mb-8 lg:mb-0 lg:order-2">
+      <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-neutral-50 overflow-hidden">
+        {/* Шарики слева снизу */}
+        <Ball size={70}  variant="pink"  opacity={0.35} className="absolute left-4  bottom-16 pointer-events-none" />
+        <Ball size={45}  variant="light" opacity={0.40} className="absolute left-24 bottom-8  pointer-events-none" />
+        <Ball size={55}  variant="pale"  opacity={0.45} className="absolute left-8  bottom-36 pointer-events-none" />
+
+        <div className="flex-1 h-[400px] lg:h-[700px] mb-8 lg:mb-0 lg:order-2 rounded-3xl overflow-hidden">
           <img
             src="https://cdn.poehali.dev/projects/8661a33f-39df-4105-a2de-83ebb0c68c74/files/3763a9ed-70a9-4ea4-9e7b-43b77998800b.jpg"
             alt="Процедура лазерной эпиляции в DENU"
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="flex-1 text-left lg:h-[700px] flex flex-col justify-center lg:mr-16 lg:order-1">
+        <div className="flex-1 text-left lg:h-[700px] flex flex-col justify-center lg:mr-16 lg:order-1 relative z-10">
           <h3 className="uppercase mb-4 text-sm tracking-widest text-[#ff5e8e]">Наш подход</h3>
           <p className="text-2xl lg:text-4xl mb-6 text-neutral-900 leading-tight font-bold">
             Мастер с медицинским образованием — не просто оператор лазера, а ваш личный эксперт по коже.
@@ -88,8 +101,14 @@ export default function Featured() {
       </div>
 
       {/* Прайс */}
-      <div id="prices" className="bg-white px-6 py-20 lg:py-28">
-        <div className="max-w-4xl mx-auto">
+      <div id="prices" className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
+        {/* Шарики по углам */}
+        <Ball size={90}  variant="pale"  opacity={0.55} className="absolute -right-4 top-8  pointer-events-none" />
+        <Ball size={55}  variant="light" opacity={0.45} className="absolute right-20 top-4  pointer-events-none" />
+        <Ball size={75}  variant="pale"  opacity={0.50} className="absolute -left-6  bottom-10 pointer-events-none" />
+        <Ball size={42}  variant="pink"  opacity={0.30} className="absolute left-20  bottom-6  pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Цены</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 text-center mb-4">
             Популярные зоны
@@ -99,11 +118,11 @@ export default function Featured() {
               Скидка 50% на первый визит
             </span>
           </div>
-          <div className="space-y-1">
+          <div className="space-y-2">
             {prices.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between py-4 px-6 border border-neutral-100 hover:border-[#ff5e8e]/30 hover:bg-pink-50/30 transition-all duration-200 rounded-2xl"
+                className="flex items-center justify-between py-4 px-6 border border-neutral-100 hover:border-[#ff5e8e]/30 hover:bg-pink-50/40 transition-all duration-200 rounded-2xl bg-white"
               >
                 <span className="text-neutral-900 font-medium">{item.zone}</span>
                 <div className="flex items-center gap-4">

@@ -1,6 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import FloatingBalloons from "@/components/FloatingBalloons";
+import Ball from "@/components/Ball";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -26,6 +26,16 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
       </motion.div>
+
+      {/* Шарики-декор по углам */}
+      <Ball size={90}  variant="pink"  opacity={0.55} className="absolute top-16 left-8 pointer-events-none" />
+      <Ball size={56}  variant="light" opacity={0.45} className="absolute top-28 left-24 pointer-events-none" />
+      <Ball size={72}  variant="pink"  opacity={0.50} className="absolute top-12 right-10 pointer-events-none" />
+      <Ball size={44}  variant="pale"  opacity={0.55} className="absolute top-32 right-28 pointer-events-none" />
+      <Ball size={64}  variant="light" opacity={0.40} className="absolute bottom-24 left-12 pointer-events-none" />
+      <Ball size={48}  variant="pink"  opacity={0.45} className="absolute bottom-16 left-36 pointer-events-none" />
+      <Ball size={80}  variant="pink"  opacity={0.45} className="absolute bottom-20 right-8 pointer-events-none" />
+      <Ball size={38}  variant="pale"  opacity={0.50} className="absolute bottom-36 right-32 pointer-events-none" />
 
       <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-6">
@@ -57,8 +67,6 @@ export default function Hero() {
           <span style={{ color: "#2ecc71" }} className="font-semibold">Скидка 50%</span> на первый визит для новых клиентов
         </p>
       </div>
-
-      <FloatingBalloons count={6} />
 
       <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
         <motion.div

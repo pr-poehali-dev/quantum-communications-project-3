@@ -1,6 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
-import FloatingBalloons from "@/components/FloatingBalloons";
+import Ball from "@/components/Ball";
 
 const reviews = [
   {
@@ -66,6 +66,14 @@ export default function Promo() {
           </motion.div>
         </div>
 
+        {/* Шарики на параллакс-секции */}
+        <Ball size={80}  variant="pink"  opacity={0.50} className="absolute top-10 left-6   pointer-events-none z-10" />
+        <Ball size={50}  variant="light" opacity={0.45} className="absolute top-20 left-28  pointer-events-none z-10" />
+        <Ball size={65}  variant="pink"  opacity={0.45} className="absolute top-8  right-10  pointer-events-none z-10" />
+        <Ball size={40}  variant="pale"  opacity={0.55} className="absolute top-24 right-32  pointer-events-none z-10" />
+        <Ball size={72}  variant="light" opacity={0.40} className="absolute bottom-12 left-10 pointer-events-none z-10" />
+        <Ball size={44}  variant="pink"  opacity={0.45} className="absolute bottom-8  right-14 pointer-events-none z-10" />
+
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 text-center">
           <p className="uppercase text-[#ff5e8e] text-sm tracking-widest mb-4">Результаты</p>
           <h2 className="text-white text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
@@ -81,12 +89,16 @@ export default function Promo() {
             Записаться сейчас
           </a>
         </div>
-        <FloatingBalloons count={5} />
       </div>
 
       {/* Отзывы */}
-      <div className="bg-neutral-50 px-6 py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto">
+      <div className="relative bg-neutral-50 px-6 py-20 lg:py-28 overflow-hidden">
+        <Ball size={85}  variant="pale"  opacity={0.60} className="absolute -left-6  top-10 pointer-events-none" />
+        <Ball size={52}  variant="light" opacity={0.50} className="absolute left-18  top-4  pointer-events-none" />
+        <Ball size={68}  variant="pale"  opacity={0.55} className="absolute -right-4 bottom-12 pointer-events-none" />
+        <Ball size={40}  variant="pink"  opacity={0.30} className="absolute right-20  bottom-6  pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">Отзывы</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 text-center mb-4">
             Что говорят клиенты
@@ -110,15 +122,19 @@ export default function Promo() {
       </div>
 
       {/* FAQ */}
-      <div className="bg-white px-6 py-20 lg:py-28">
-        <div className="max-w-3xl mx-auto">
+      <div className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
+        <Ball size={95}  variant="pale"  opacity={0.55} className="absolute -right-6 top-12  pointer-events-none" />
+        <Ball size={58}  variant="light" opacity={0.45} className="absolute right-24 top-6   pointer-events-none" />
+        <Ball size={70}  variant="pale"  opacity={0.50} className="absolute -left-4  bottom-8 pointer-events-none" />
+
+        <div className="max-w-3xl mx-auto relative z-10">
           <p className="uppercase text-sm tracking-widest text-neutral-400 mb-3 text-center">FAQ</p>
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 text-center mb-16">
             Частые вопросы
           </h2>
-          <div className="space-y-1">
+          <div className="space-y-2">
             {faqs.map((faq, i) => (
-              <details key={i} className="group border border-neutral-100 rounded-2xl overflow-hidden">
+              <details key={i} className="group border border-neutral-100 rounded-2xl overflow-hidden bg-white">
                 <summary className="flex items-center justify-between cursor-pointer p-6 text-neutral-900 font-semibold text-base hover:bg-neutral-50 transition-colors">
                   {faq.q}
                   <span className="ml-4 text-[#ff5e8e] text-xl font-light group-open:rotate-45 transition-transform duration-200">+</span>
