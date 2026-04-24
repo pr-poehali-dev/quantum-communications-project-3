@@ -1,4 +1,5 @@
 import Ball from "@/components/Ball";
+import Wave from "@/components/Wave";
 
 export default function Footer() {
   return (
@@ -69,6 +70,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* neutral-50 → тёмный */}
+      <Wave topColor="#f9fafb" bottomColor="#171717" variant={2} />
 
       {/* Sticky Footer */}
       <div

@@ -1,5 +1,6 @@
 import Icon from "@/components/ui/icon";
 import Ball from "@/components/Ball";
+import Wave from "@/components/Wave";
 
 const advantages = [
   {
@@ -68,6 +69,9 @@ export default function Featured() {
         </div>
       </div>
 
+      {/* белый → neutral-50 */}
+      <Wave topColor="#ffffff" bottomColor="#f9fafb" variant={1} />
+
       {/* Процедура + фото */}
       <div className="relative flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-neutral-50 overflow-hidden">
         {/* Шарики слева снизу */}
@@ -99,6 +103,9 @@ export default function Featured() {
           </a>
         </div>
       </div>
+
+      {/* neutral-50 → белый */}
+      <Wave topColor="#f9fafb" bottomColor="#ffffff" variant={3} />
 
       {/* Прайс */}
       <div id="prices" className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">

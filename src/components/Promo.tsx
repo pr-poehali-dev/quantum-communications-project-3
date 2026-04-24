@@ -1,6 +1,7 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import Ball from "@/components/Ball";
+import Wave from "@/components/Wave";
 
 const reviews = [
   {
@@ -91,6 +92,9 @@ export default function Promo() {
         </div>
       </div>
 
+      {/* тёмный → neutral-50 */}
+      <Wave topColor="#111111" bottomColor="#f9fafb" variant={2} />
+
       {/* Отзывы */}
       <div className="relative bg-neutral-50 px-6 py-20 lg:py-28 overflow-hidden">
         <Ball size={85}  variant="pale"  opacity={0.60} className="absolute -left-6  top-10 pointer-events-none" />
@@ -120,6 +124,9 @@ export default function Promo() {
           </div>
         </div>
       </div>
+
+      {/* neutral-50 → белый */}
+      <Wave topColor="#f9fafb" bottomColor="#ffffff" variant={4} />
 
       {/* FAQ */}
       <div className="relative bg-white px-6 py-20 lg:py-28 overflow-hidden">
