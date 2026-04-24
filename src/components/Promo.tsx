@@ -1,5 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import FloatingBalloons from "@/components/FloatingBalloons";
 
 const reviews = [
   {
@@ -75,11 +76,12 @@ export default function Promo() {
           </p>
           <a
             href="#contact"
-            className="bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-sm"
+            className="bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-full shadow-lg"
           >
             Записаться сейчас
           </a>
         </div>
+        <FloatingBalloons count={5} />
       </div>
 
       {/* Отзывы */}
@@ -96,7 +98,7 @@ export default function Promo() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {reviews.map((r, i) => (
-              <div key={i} className="bg-white p-6 rounded-sm border border-neutral-100 hover:shadow-md transition-shadow duration-300">
+              <div key={i} className="bg-white p-6 rounded-3xl border border-neutral-100 hover:shadow-md hover:border-pink-100 transition-all duration-300">
                 <div className="text-yellow-400 text-sm mb-3">{"★".repeat(r.stars)}</div>
                 <p className="text-neutral-600 text-sm leading-relaxed mb-4 italic">«{r.text}»</p>
                 <p className="text-neutral-900 font-semibold text-sm">{r.name}</p>
@@ -116,7 +118,7 @@ export default function Promo() {
           </h2>
           <div className="space-y-1">
             {faqs.map((faq, i) => (
-              <details key={i} className="group border border-neutral-100 rounded-sm">
+              <details key={i} className="group border border-neutral-100 rounded-2xl overflow-hidden">
                 <summary className="flex items-center justify-between cursor-pointer p-6 text-neutral-900 font-semibold text-base hover:bg-neutral-50 transition-colors">
                   {faq.q}
                   <span className="ml-4 text-[#ff5e8e] text-xl font-light group-open:rotate-45 transition-transform duration-200">+</span>

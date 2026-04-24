@@ -46,7 +46,7 @@ export default function Footer() {
           <div className="text-center">
             <a
               href="tel:+7"
-              className="inline-block bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-10 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-sm shadow-lg mr-4"
+              className="inline-block bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-10 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-full shadow-lg mr-4"
             >
               Позвонить
             </a>
@@ -54,7 +54,7 @@ export default function Footer() {
               href="https://vk.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block border border-neutral-300 text-neutral-700 hover:border-[#ff5e8e] hover:text-[#ff5e8e] font-semibold px-10 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-sm"
+              className="inline-block border border-neutral-300 text-neutral-700 hover:border-[#ff5e8e] hover:text-[#ff5e8e] font-semibold px-10 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-full"
             >
               ВКонтакте
             </a>

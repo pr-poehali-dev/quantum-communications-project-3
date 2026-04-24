@@ -1,5 +1,6 @@
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
+import FloatingBalloons from "@/components/FloatingBalloons";
 
 export default function Hero() {
   const container = useRef<HTMLDivElement>(null);
@@ -27,7 +28,7 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2.5 mb-6">
           <span className="text-yellow-400">★★★★★</span>
           <span className="text-sm text-white/90">5.0 на Яндекс.Картах · 200+ отзывов</span>
         </div>
@@ -41,13 +42,13 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#contact"
-            className="bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-sm shadow-lg"
+            className="bg-[#ff5e8e] hover:bg-[#e54d7d] text-white font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-full shadow-lg"
           >
             Записаться на сеанс
           </a>
           <a
             href="#prices"
-            className="border border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-sm"
+            className="border border-white/60 text-white hover:bg-white/10 font-semibold px-8 py-4 text-base uppercase tracking-wide transition-all duration-300 rounded-full"
           >
             Смотреть прайс
           </a>
@@ -56,6 +57,8 @@ export default function Hero() {
           <span style={{ color: "#2ecc71" }} className="font-semibold">Скидка 50%</span> на первый визит для новых клиентов
         </p>
       </div>
+
+      <FloatingBalloons count={6} />
 
       <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
         <motion.div

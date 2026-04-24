@@ -22,7 +22,7 @@ export default function Header({ className }: HeaderProps) {
           </a>
           <a
             href="#contact"
-            className="bg-[#ff5e8e] text-white px-5 py-2 text-sm uppercase tracking-wide hover:bg-[#e54d7d] transition-colors duration-300 rounded-sm"
+            className="bg-[#ff5e8e] text-white px-5 py-2 text-sm uppercase tracking-wide hover:bg-[#e54d7d] transition-colors duration-300 rounded-full"
           >
             Записаться
           </a>

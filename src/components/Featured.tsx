@@ -45,7 +45,7 @@ export default function Featured() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {advantages.map((adv) => (
-              <div key={adv.title} className="flex flex-col items-start p-8 border border-neutral-100 hover:shadow-lg transition-shadow duration-300 rounded-sm">
+              <div key={adv.title} className="flex flex-col items-start p-8 border border-neutral-100 hover:shadow-lg transition-shadow duration-300 rounded-3xl hover:border-pink-100">
                 <div
                   className="w-12 h-12 rounded-full flex items-center justify-center mb-5"
                   style={{ backgroundColor: adv.color + "20" }}
@@ -79,7 +79,7 @@ export default function Featured() {
           </p>
           <a
             href="#contact"
-            className="inline-block text-white border-0 px-6 py-3 text-sm transition-all duration-300 cursor-pointer uppercase tracking-wide w-fit rounded-sm"
+            className="inline-block text-white border-0 px-6 py-3 text-sm transition-all duration-300 cursor-pointer uppercase tracking-wide w-fit rounded-full hover:opacity-90"
             style={{ backgroundColor: "#ff5e8e" }}
           >
             Записаться бесплатно
@@ -95,7 +95,7 @@ export default function Featured() {
             Популярные зоны
           </h2>
           <div className="inline-flex items-center gap-2 mx-auto flex justify-center mb-12">
-            <span className="bg-[#2ecc71] text-white text-sm font-bold px-4 py-2 rounded-sm uppercase tracking-wide">
+            <span className="bg-[#2ecc71] text-white text-sm font-bold px-4 py-2 rounded-full uppercase tracking-wide">
               Скидка 50% на первый визит
             </span>
           </div>
@@ -103,7 +103,7 @@ export default function Featured() {
             {prices.map((item, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between py-4 px-6 border border-neutral-100 hover:border-[#ff5e8e]/30 hover:bg-pink-50/30 transition-all duration-200"
+                className="flex items-center justify-between py-4 px-6 border border-neutral-100 hover:border-[#ff5e8e]/30 hover:bg-pink-50/30 transition-all duration-200 rounded-2xl"
               >
                 <span className="text-neutral-900 font-medium">{item.zone}</span>
                 <div className="flex items-center gap-4">
